@@ -238,7 +238,7 @@ public class CreateConferenceActivity extends WfcBaseActivity {
             public void onSuccess(String conferenceId) {
                 info.setConferenceId(conferenceId);
                 if (join) {
-                    AVEngineKit.CallSession session = AVEngineKit.Instance().joinConference(conferenceId, false, info.getPin(), info.getOwner(), info.getConferenceTitle(), "", info.isAudience(), info.isAdvance(), !enableAudio, !enableVideo, false, null);
+                    AVEngineKit.CallSession session = AVEngineKit.Instance().joinConference(conferenceId, false, info.getPin(), info.getOwner(), info.getConferenceTitle(), "", info.isAudience(), info.isAdvance(), !enableAudio, false, null);
                     if (session != null) {
                         Intent intent = new Intent(CreateConferenceActivity.this, ConferenceActivity.class);
                         startActivity(intent);
